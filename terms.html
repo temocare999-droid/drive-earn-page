@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — drive/earn</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{
+    --ink:#0d1210;
+    --panel:#12211c;
+    --paper:#f4f8f2;
+    --lime:#c8ff5e;
+    --lime-dim:#9fd645;
+    --steel:#7d9490;
+    --line:rgba(244,248,242,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{
+      animation:rise .8s ease forwards;
+      opacity:0;
+    }
+    .reveal:nth-child(1){animation-delay:.05s;}
+    .reveal:nth-child(2){animation-delay:.15s;}
+    .reveal:nth-child(3){animation-delay:.25s;}
+    .reveal:nth-child(4){animation-delay:.35s;}
+    @keyframes rise{
+      from{opacity:0; transform:translateY(18px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  }
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* NAV */
+  nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 32px;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:22px;
+    letter-spacing:0.04em;
+    color:var(--paper);
+  }
+  .brand span{color:var(--lime);}
+  .navlink{
+    color:var(--steel);
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    border:1px solid var(--line);
+    padding:10px 18px;
+    border-radius:999px;
+    transition:all .25s ease;
+  }
+  .navlink:hover{border-color:var(--lime);color:var(--lime);}
+
+  /* HERO */
+  .hero{
+    padding:100px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-200px;right:-160px;
+    width:520px;height:520px;
+    background:radial-gradient(circle, rgba(200,255,94,0.16), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--lime-dim);
+    margin-bottom:28px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--lime-dim);
+  }
+  h1{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:400;
+    font-size:clamp(42px,6vw,74px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width:820px;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--lime);
+  }
+  .lede{
+    max-width:520px;
+    margin-top:28px;
+    font-size:18px;
+    line-height:1.6;
+    color:#cdd8d2;
+  }
+  .hero-actions{
+    margin-top:44px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .btn-primary{
+    background:var(--lime);
+    color:#0d1210;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.02em;
+    padding:18px 34px;
+    border-radius:999px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 0 0 rgba(200,255,94,0);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(200,255,94,0.25);
+  }
+  .btn-primary svg{width:16px;height:16px;}
+  .fineprint{
+    font-size:12px;
+    color:var(--steel);
+  }
+
+  /* HERO VISUAL */
+  .hero-visual{
+    position:relative;
+    aspect-ratio:16/10;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:#0a0d0a;
+  }
+  .hero-visual img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .hero-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(13,18,16,0.35) 0%, transparent 35%, rgba(13,18,16,0.45) 100%);
+    pointer-events:none;
+  }
+  .hero-tag{
+    position:absolute;
+    top:20px;left:20px;
+    background:rgba(13,18,16,0.72);
+    color:var(--paper);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:8px 14px;
+    border-radius:999px;
+    backdrop-filter:blur(6px);
+    z-index:2;
+  }
+    padding:8px 14px;
+    border-radius:999px;
+    backdrop-filter:blur(6px);
+  }
+
+  /* STRIP OF PERKS */
+  .perks{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:30px 0;
+  }
+  .perks-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    justify-content:space-between;
+  }
+  .perk{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex:1 1 200px;
+  }
+  .perk .num{
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:26px;
+    color:var(--lime-dim);
+  }
+  .perk .label{
+    font-size:14px;
+    color:#cdd8d2;
+    line-height:1.35;
+  }
+  .perk .label b{color:var(--paper);display:block;font-weight:600;font-size:15px;}
+
+  /* HOW IT WORKS */
+  .section{
+    padding:100px 0;
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:64px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:clamp(30px,4vw,44px);
+    max-width:520px;
+    line-height:1.15;
+  }
+  .section-head p{
+    max-width:340px;
+    color:var(--steel);
+    font-size:15px;
+    line-height:1.6;
+  }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .step{
+    background:var(--panel);
+    padding:44px 32px;
+  }
+  .step .tag{
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--lime-dim);
+    margin-bottom:22px;
+  }
+  .step h3{
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .step p{
+    font-size:14px;
+    color:#a9bab4;
+    line-height:1.6;
+  }
+
+  /* WHY SECTION */
+  .why{
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .why-visual{
+    aspect-ratio:4/3;
+    border-radius:6px;
+    background:#0a100d;
+    border:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .why-visual img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .why-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(10,16,13,0.15) 40%, rgba(10,16,13,0.88) 100%);
+  }
+  .verified-badge{
+    position:absolute;
+    z-index:2;
+    top:22px;right:22px;
+    width:52px;height:52px;
+    border-radius:50%;
+    background:#0d1210;
+    border:2px solid var(--lime);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  }
+  .verified-badge svg{width:24px;height:24px;}
+  .why-visual .odometer{
+    position:absolute;
+    z-index:2;
+    bottom:28px;left:28px;right:28px;
+    display:flex;
+    justify-content:space-between;
+    font-family:Georgia,serif;
+    font-style:italic;
+    color:#cfdad4;
+    font-size:13px;
+    border-top:1px solid rgba(244,248,242,0.25);
+    padding-top:18px;
+  }
+  .why-visual .odometer b{
+    display:block;
+    color:var(--lime);
+    font-style:normal;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:26px;
+    margin-bottom:4px;
+  }
+  .why-list{display:flex;flex-direction:column;gap:30px;}
+  .why-item{display:flex;gap:20px;}
+  .why-item .mark{
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--lime);
+    margin-top:8px;
+    flex-shrink:0;
+  }
+  .why-item h4{font-size:17px;margin-bottom:6px;}
+  .why-item p{font-size:14px;color:#a9bab4;line-height:1.6;}
+
+  /* FINAL CTA */
+  /* DISCLOSURE BAR */
+  .disclosure{
+    background:rgba(200,255,94,0.07);
+    border-bottom:1px solid var(--line);
+    padding:14px 0;
+    font-size:13px;
+    color:#c3cfc8;
+    line-height:1.5;
+  }
+  .disclosure b{color:var(--lime-dim);font-weight:600;}
+
+  /* CALCULATOR */
+  .calc-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:start;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:44px;
+  }
+  .calc-field{margin-bottom:26px;}
+  .calc-field label{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    color:#cdd8d2;
+    margin-bottom:12px;
+  }
+  .calc-field label b{color:var(--lime);font-size:16px;}
+  input[type=range]{
+    width:100%;
+    -webkit-appearance:none;
+    height:5px;
+    border-radius:3px;
+    background:#2a3a34;
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--lime);
+    cursor:pointer;
+    border:3px solid var(--panel);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:20px;height:20px;border:none;
+    border-radius:50%;background:var(--lime);cursor:pointer;
+  }
+  select{
+    width:100%;
+    background:#0d1a15;
+    color:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:12px 14px;
+    font-size:14px;
+    font-family:inherit;
+  }
+  .calc-out{
+    background:#0a130f;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:32px;
+    text-align:center;
+  }
+  .calc-out .big{
+    font-family:Georgia,serif;
+    font-size:46px;
+    color:var(--lime);
+    line-height:1.1;
+  }
+  .calc-out .cap{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:10px;
+  }
+  .calc-rows{
+    margin-top:26px;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .calc-rows div{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    color:#a9bab4;
+  }
+  .calc-rows div span:last-child{color:var(--paper);}
+  .calc-note{
+    margin-top:22px;
+    font-size:12px;
+    color:var(--steel);
+    line-height:1.6;
+  }
+
+  /* REQUIREMENTS */
+  .req-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .req-card{
+    background:var(--panel);
+    padding:34px 30px;
+  }
+  .req-card h3{
+    font-size:17px;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .req-card h3::before{
+    content:"";
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--lime);
+  }
+  .req-card ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  .req-card li{
+    font-size:14px;
+    color:#a9bab4;
+    line-height:1.55;
+    padding-left:20px;
+    position:relative;
+  }
+  .req-card li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--lime-dim);
+  }
+
+  /* COMPARISON TABLE */
+  .cmp{
+    width:100%;
+    border-collapse:collapse;
+    border:1px solid var(--line);
+    font-size:14px;
+  }
+  .cmp th, .cmp td{
+    padding:18px 20px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    border-right:1px solid var(--line);
+  }
+  .cmp thead th{
+    background:var(--panel);
+    color:var(--paper);
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .cmp td{color:#a9bab4;line-height:1.5;}
+  .cmp td:first-child{color:var(--paper);font-weight:600;}
+  .cmp tbody tr:hover{background:rgba(200,255,94,0.03);}
+
+  /* FAQ */
+  .faq-list{border-top:1px solid var(--line);}
+  details{
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+  }
+  details summary{
+    cursor:pointer;
+    font-size:16px;
+    color:var(--paper);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:flex-start;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{
+    content:"+";
+    color:var(--lime);
+    font-size:22px;
+    line-height:1;
+    flex-shrink:0;
+  }
+  details[open] summary::after{content:"–";}
+  details p{
+    margin-top:14px;
+    font-size:14.5px;
+    color:#a9bab4;
+    line-height:1.7;
+    max-width:760px;
+  }
+
+  .cta-section{
+    padding:120px 0;
+    text-align:center;
+  }
+  .cta-section h2{
+    font-family:Georgia,serif;
+    font-weight:400;
+    font-size:clamp(32px,5vw,54px);
+    max-width:640px;
+    margin:0 auto 22px;
+    line-height:1.15;
+  }
+  .cta-section p{
+    color:var(--steel);
+    max-width:440px;
+    margin:0 auto 40px;
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:36px 0;
+  }
+  .foot-row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:12px;
+    color:var(--steel);
+    line-height:1.6;
+  }
+  .foot-row a{color:var(--steel);}
+
+  @media (max-width:860px){
+    .steps{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .perks-row{gap:26px;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .calc-wrap{grid-template-columns:1fr;gap:32px;padding:28px;}
+    .req-grid{grid-template-columns:1fr;}
+    .cmp{font-size:13px;}
+    .cmp th,.cmp td{padding:12px 10px;}
+    .cmp-scroll{overflow-x:auto;}
+  }
+</style>
+
+<style>
+  .legal{padding:70px 0 100px;}
+  .legal h1{font-size:clamp(32px,4.5vw,46px);margin-bottom:14px;}
+  .legal .updated{color:var(--steel);font-size:13px;margin-bottom:48px;}
+  .legal h2{font-family:Georgia,serif;font-weight:400;font-size:24px;margin:42px 0 14px;color:var(--paper);}
+  .legal p{color:#b6c4be;font-size:15px;line-height:1.75;margin-bottom:14px;max-width:820px;}
+  .legal ul{margin:0 0 16px 0;padding-left:20px;max-width:820px;}
+  .legal li{color:#b6c4be;font-size:15px;line-height:1.7;margin-bottom:9px;}
+  .legal a{color:var(--lime-dim);}
+  .back{display:inline-block;color:var(--steel);text-decoration:none;font-size:13px;margin-bottom:36px;}
+  .back:hover{color:var(--lime);}
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand" style="text-decoration:none;">drive<span>/</span>earn</a>
+  <a class="navlink" href="index.html#join">Get my bonus</a>
+</nav>
+
+<div class="wrap legal">
+<a class="back" href="index.html">&larr; Back to home</a>
+<h1>Terms of Use</h1>
+<p class="updated">Last updated: August 13, 2026</p>
+
+<p>By using this website you agree to the terms below. If you disagree with any part of them, please stop using the site.</p>
+
+<h2>What this site is</h2>
+<p>This is an independent informational resource about becoming a rideshare or delivery driver in the United States. It is published by an individual, not by a rideshare or delivery company.</p>
+
+<h2>What this site is not</h2>
+<p>We are not a rideshare company, a delivery company, a staffing agency, or an employer. We do not hire drivers, process applications, conduct background checks, schedule vehicle inspections, set pay rates, determine bonus amounts, or influence whether any application is approved. We have no access to your application or your account with any platform. Nothing on this site creates an employment relationship, an agency relationship, or any offer of work.</p>
+
+<h2>Referral relationship</h2>
+<p>Links on this site marked as sign-up or application links are referral links. If you sign up through one and go on to meet the platform's conditions, we may receive a referral bonus from that platform. This costs you nothing and does not change the terms, requirements, bonus, or pay rate offered to you. We disclose this on the home page and again here so it is unambiguous.</p>
+
+<h2>Accuracy and the limits of what we can tell you</h2>
+<p>Driver requirements, bonus offers, pay rates, vehicle rules, and local regulations differ from city to city and change frequently and without notice. Information here is general and may be out of date by the time you read it. The only authoritative source for what applies to you is the platform itself during sign-up. Verify anything that matters to your decision before relying on it.</p>
+
+<h2>The earnings estimator</h2>
+<p>The estimator is an illustration, not a projection, quote, or promise of income. It applies simplified assumptions — roughly twenty driving miles per paid hour, a flat per-mile vehicle cost, and a flat tax set-aside — that will not match your situation exactly. Actual earnings depend on your city, your hours, demand and surge, tips, how much of your online time is paid, your vehicle's real running costs, and your own tax circumstances. Many drivers earn less than a simple estimate suggests. Do not make financial commitments based on its output.</p>
+
+<h2>Not professional advice</h2>
+<p>Nothing here is legal, tax, financial, or insurance advice. Independent contractor status carries real consequences for taxes, insurance coverage, and liability. Consult a qualified professional in your state about your own circumstances, and speak to your insurer before driving commercially — many personal auto policies exclude rideshare and delivery use.</p>
+
+<h2>Your responsibilities</h2>
+<ul>
+<li>Confirm you meet the legal requirements to drive for hire where you live</li>
+<li>Maintain valid licensing, registration, and insurance appropriate to how you use your vehicle</li>
+<li>Comply with the terms of any platform you join, and with your lease or finance agreement if applicable</li>
+<li>Meet your own tax obligations, including estimated payments where required</li>
+<li>Use this site lawfully, and not attempt to disrupt, scrape at scale, or misrepresent it</li>
+</ul>
+
+<h2>Third-party sites</h2>
+<p>We link to sites we do not control. We are not responsible for their content, their terms, their privacy practices, or anything that happens after you leave this site. A link is not an endorsement or a guarantee.</p>
+
+<h2>Limitation of liability</h2>
+<p>This site is provided as is, without warranties of any kind. To the fullest extent permitted by law, we are not liable for any loss arising from your use of this site or from decisions you make based on it — including lost earnings, vehicle expenses, tax liabilities, insurance disputes, or a rejected application. Your decision to apply and to drive is your own.</p>
+
+<h2>Intellectual property</h2>
+<p>The written content, layout, and tools on this site are ours. Trademarks, names, and logos belonging to third parties remain the property of their respective owners, and any reference to them is descriptive only and does not imply affiliation or endorsement.</p>
+
+<h2>Changes</h2>
+<p>We may revise these terms. The current version will always be posted here with the date it took effect. Continuing to use the site after a change means you accept the revised terms.</p>
+
+<h2>Contact</h2>
+<p>Questions about these terms can be sent through the contact details on our home page.</p>
+</div>
+<footer>
+  <div class="wrap foot-row">
+    <span>Independent referral resource. Not affiliated with, endorsed by, or operated by any rideshare or delivery company.</span>
+    <span><a href="index.html" style="color:var(--steel);">Home</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--steel);">Privacy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:var(--steel);">Terms</a></span>
+  </div>
+</footer>
+</body>
+</html>
