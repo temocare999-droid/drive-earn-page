@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18376838536"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D56F8NZPX7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18376838536');
+  gtag('config', 'G-D56F8NZPX7');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Drive & Earn — Start Your Rideshare Journey</title>
 <style>
@@ -630,7 +641,7 @@
       <h1 class="reveal">Turn open roads into <em>open income.</em></h1>
       <p class="lede reveal">Apply to drive with the rideshare app you already know — using our referral link. Set your own hours, keep what you earn, and get paid weekly — no office, no boss, no schedule but your own.</p>
       <div class="hero-actions reveal">
-        <a class="btn-primary" href="https://www.uber.com/signup/drive/deliver/?invite_code=hdhehkf" target="_blank" rel="noopener">
+        <a class="btn-primary js-referral" href="https://www.uber.com/signup/drive/deliver/?invite_code=hdhehkf" target="_blank" rel="noopener">
           Get my signup bonus
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -901,7 +912,7 @@
   <div class="wrap">
     <h2>Your car. Your hours. Your income.</h2>
     <p>Use our referral link to start your application today and unlock your new-driver sign-up bonus.</p>
-    <a class="btn-primary" href="https://www.uber.com/signup/drive/deliver/?invite_code=hdhehkf" target="_blank" rel="noopener">
+    <a class="btn-primary js-referral" href="https://www.uber.com/signup/drive/deliver/?invite_code=hdhehkf" target="_blank" rel="noopener">
       Start my application
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -943,6 +954,24 @@
   }
   [h,m,g,p].forEach(function(el){el.addEventListener('input',calc);});
   calc();
+})();
+</script>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.js-referral');
+  for (var i=0;i<links.length;i++){
+    links[i].addEventListener('click', function(){
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18376838536/REPLACE_WITH_LABEL'
+        });
+        gtag('event', 'referral_click', {
+          'send_to': 'G-D56F8NZPX7'
+        });
+      }
+    });
+  }
 })();
 </script>
 </body>
