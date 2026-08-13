@@ -962,14 +962,17 @@
   var links = document.querySelectorAll('.js-referral');
   for (var i=0;i<links.length;i++){
     links[i].addEventListener('click', function(){
-      if (typeof gtag === 'function') {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18376838536/REPLACE_WITH_LABEL'
-        });
-        gtag('event', 'referral_click', {
-          'send_to': 'G-D56F8NZPX7'
-        });
-      }
+      if (typeof gtag !== 'function') return;
+      // Ads conversion
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18376838536/9mUyCMbG3t0cEIib4bpE',
+        'transport_type': 'beacon'
+      });
+      // Analytics event
+      gtag('event', 'referral_click', {
+        'send_to': 'G-D56F8NZPX7',
+        'transport_type': 'beacon'
+      });
     });
   }
 })();
